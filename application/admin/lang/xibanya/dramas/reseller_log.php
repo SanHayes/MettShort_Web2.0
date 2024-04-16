@@ -1,0 +1,33 @@
+<?php
+                    
+return [
+    'Type' => '类型',
+    'Type direct' => '直接佣金',
+    'Type indirect' => '间接佣金',
+    'Reseller_user_id' => '分销商ID',
+    'User_id' => '用户ID',
+    'User_email' => '会员邮箱',
+    'User.nickname' => '用户昵称',
+    'Pay_money' => '支付金额',
+    'Ratio' => '分润比例',
+    'Money' => '佣金',
+    'Currency' => '货币',
+    'Exchange rate' => '兑换比例',
+    'Total_money' => '积分佣金',
+    'Memo' => '备注',
+    'Order_type' => '订单类型',
+    'Order_type vip' => 'VIP订单',
+    'Order_type reseller' => '分销商订单',
+    'Order_type usable' => '剧场积分充值订单',
+    'Order' => '订单信息',
+    'Order_id' => '订单ID',
+    'User' => '消费用户',
+    'Reseller' => '分销商',
+    'Total logs' => '总记录数量',
+    'Total money' => '佣金总金额',
+    'Total pay money' => '付款总金额',
+    'Withdraw total money' => '佣金总积分',
+    'Logs' => '条',
+    'Point' => '积分',
+    'Filter' => '筛选'
+];

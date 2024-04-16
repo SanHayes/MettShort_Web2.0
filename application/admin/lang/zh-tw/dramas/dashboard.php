@@ -1,0 +1,33 @@
+<?php
+                    
+return [
+    'Please select to view data' => '請選擇查看數據',
+    'Accumulate' => '累計',
+    'Unit' => '組織',
+    'Rank' => '排名',
+    'Image' => '短劇封面',
+    'Title' => '短劇名稱',
+    'Sales' => '短劇銷量',
+    'Sales volume' => '銷售額',
+    'Point' => '積分',
+    'No data found, you can try refreshing~' => '沒有找到任何數據，您可以嘗試重繪~',
+    'Payment orders' => '支付單數',
+    'Total orders' => '總單數',
+    'Orders' => '單',
+    'Withdrawal points' => '提現積分',
+    'Commission points' => '傭金積分',
+    'Payment channels' => '支付通路',
+    'Withdrawal order' => '提現訂單',
+    'Reseller order' => '分銷商訂單',
+    'Reseller log' => '分銷記錄',
+    'Vip order' => 'VIP訂單',
+    'Usable order' => '劇場積分訂單',
+    'Yesterday' => '昨日',
+    'Today' => '今日',
+    'Week' => '近一周',
+    'Month' => '近一月',
+    'Year' => '近一年',
+    'PaypalPay' => 'PayPal支付',
+    'StripePay' => 'Stripe支付',
+    'OtherPay' => '其他支付'
+];

@@ -1,0 +1,412 @@
+<link rel="stylesheet" href="__CDN__/assets/addons/dramas/libs/element/element.css">
+<link rel="stylesheet" href="__CDN__/assets/addons/dramas/libs/common.css">
+<style>
+    #orderDetail {
+        font-size: 12px;
+        font-family: Source Han Sans SC;
+        font-weight: 400;
+    }
+
+    .theme-color {
+        color: #7536D0;
+    }
+
+    .color-333 {
+        color: #333;
+    }
+
+    .color-666 {
+        color: #666;
+    }
+
+    .color-888 {
+        color: #888;
+    }
+
+    .color-999 {
+        color: #999;
+    }
+
+    .display-flex {
+        display: flex;
+        align-items: center;
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+
+    .order-title {
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .order-title img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .order-title-time {
+        margin: 0 25px 0 19px;
+    }
+
+    .order-platform {
+        margin-right: 10px;
+    }
+
+
+    .el-table thead {
+        color: #444;
+    }
+
+    .el-table th {
+        background: #F9F9F9;
+    }
+
+    .order-detail .el-step__title.is-process {
+        color: #444;
+        font-size: 14px;
+        line-height: 14px;
+        margin: 15px 0 10px 0;
+        font-weight: 500;
+    }
+
+    .el-step__head.is-success .el-step__icon.is-text {
+        background: #7536D0;
+    }
+
+    .el-step.is-horizontal .el-step__line {
+        top: 18px;
+    }
+
+    .title-span-width {
+        width: 54px;
+        display: block;
+        text-align: justify;
+        text-align-last: justify;
+    }
+
+    .title-span-width-pay {
+        width: 120px;
+        display: block;
+        text-align: justify;
+        text-align-last: justify;
+    }
+
+    .el-table_1_column_1 .cell {
+        text-align: left;
+    }
+
+    .el-table_2_column_13 .cell {
+        text-align: left;
+    }
+
+    .memo-item .el-input {
+        width: 120px;
+        margin-right: 14px;
+    }
+
+    .popover-item i {
+        font-size: 24px;
+        margin-left: 10px;
+        color: #ccc;
+    }
+
+    .el-table th {
+        font-size: 13px;
+    }
+
+    .el-dialog__body .el-table th {
+        padding: 5px 0;
+        font-size: 13px;
+    }
+
+    .el-dialog .el-input__inner {
+        font-size: 13px;
+    }
+
+    .el-checkbox__input.is-checked .el-checkbox__inner,
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+        background-color: #7536d0;
+        border-color: #7536d0;
+    }
+
+    .el-table th.is-leaf {
+        border-bottom: none;
+    }
+
+    .el-table--border td,
+    .el-table--border th,
+    .el-table__body-wrapper .el-table--border.is-scrolling-left~.el-table__fixed {
+        border-right: none;
+    }
+
+    .select-option-container .option-id {
+        width: 100px;
+        text-align: left;
+    }
+
+    .select-option-container .option-code {
+        width: 180px;
+        text-align: left;
+    }
+
+    .select-option-container .option-name {
+        flex: 1;
+    }
+
+    .select-pagination .pagination {
+        margin: 0;
+    }
+
+    .select-pagination .el-pagination__sizes {
+        display: none !important;
+    }
+
+    .nice-validator .el-input__inner {
+        vertical-align: baseline !important;
+    }
+
+    .order-msg-center .el-steps.el-steps--horizontal {
+        width: 84%;
+    }
+
+    .order-msg-right-item>span:first-child {
+        display: block;
+        width: 68px;
+        margin-right: 34px;
+    }
+
+    .package-con .el-step__icon {
+        width: 8px;
+        height: 8px;
+        background: #eee;
+        border-color: #eee;
+    }
+
+    .package-con .is-process .el-step__icon {
+        width: 8px;
+        height: 8px;
+        background: #FFB333;
+        border-color: #FFB333;
+    }
+
+    .package-con .el-step__icon-inner {
+        display: none;
+    }
+
+    .package-con .el-step.is-vertical .el-step__line {
+        top: 14px;
+        left: 3px;
+    }
+
+    .package-con .el-step.is-vertical .el-step__head {
+        width: 15px;
+    }
+
+    .package-con .el-step__title.is-finish,
+    .package-con .el-step__description.is-finish {
+        color: #666;
+    }
+
+    .package-con .el-step__title.is-process {
+        color: #666;
+        font-weight: 500;
+    }
+
+    /* delivery-msg */
+    .delivery-msg {
+        background: #F8F8F8;
+        border: 2px solid #F0F0F0;
+        margin: 14px 0 12px 0;
+        padding-bottom: 20px;
+    }
+
+    .delivery-msg-item {
+        padding: 20px 0 0 20px;
+        height: fit-content;
+    }
+
+    .delivery-msg-item .el-input--mini .el-input__inner {
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .delivery-msg-item-title {
+        margin-bottom: 10px;
+    }
+
+    .delivery-msg-item-msg {
+        margin-bottom: 5px;
+    }
+
+    .delivery-margin-left {
+        margin-left: 12px;
+        /* max-width: 280px; */
+    }
+
+    .delivery-margin-left .el-input {
+        /* max-width: 100%; */
+    }
+
+    .el-dialog .el-dialog__title,
+    .el-dialog .el-form-item__label {
+        color: #666;
+        font-weight: 400;
+    }
+
+    .el-dialog .cell {
+        font-size: 12px;
+        color: #666;
+        font-weight: 400;
+    }
+
+    .order-dialog .el-form--inline {
+        padding-top: 16px;
+    }
+
+    .dialog-deliver-content label {
+        margin-bottom: 0;
+    }
+
+    @media only screen and (max-width:991px) {
+        .hidden-sm-and-down {
+            display: none !important
+        }
+    }
+
+    @media only screen and (min-width:992px) {
+        .hidden-md-and-up {
+            display: none !important
+        }
+    }
+
+    [v-cloak] {
+        display: none
+    }
+</style>
+<script src="__CDN__/assets/addons/dramas/libs/vue.js"></script>
+<script src="__CDN__/assets/addons/dramas/libs/element/element.js"></script>
+<script src="__CDN__/assets/addons/dramas/libs/moment.js"></script>
+<script src="__CDN__/assets/addons/dramas/libs/clipboard.min.js"></script>
+<div id="orderDetail" v-cloak>
+    <div class="order-title display-flex color-666" style="justify-content: space-between;">
+        <div class="order-title display-flex">
+            <span>{{__('Order_sn')}}:{{orderDetail.order_sn}}</span>
+            <span class="order-title-time">
+                {{__('Createtime')}}:{{moment(orderDetail.createtime*1000).format("YYYY-MM-DD HH:mm:ss")}}
+            </span>
+            <div class="display-flex"><span v-if="orderDetail.platform_text" class="order-platform">{{__('Platform')}}:</span>
+                <el-popover style="min-width: 86px;" placement="top" trigger="hover">
+                    <div>{{orderDetail.platform_text}}</div>
+                    <img v-if="orderDetail.platform" slot="reference"
+                        :src="'/assets/addons/dramas/img/decorate/'+orderDetail.platform+'.png'">
+                </el-popover>
+            </div>
+        </div>
+    </div>
+
+    <div class="delivery-msg color-888">
+        <el-row>
+            <el-col :xs="12" :sm="12" :md="6" :lg="6" :xl="6">
+                <div class="delivery-msg-item">
+                    <div class="display-flex delivery-msg-item-title">
+                        <div class="color-333">{{__('Vip info')}}</div>
+                    </div>
+                    <div v-if="orderDetail.user" class="display-flex delivery-msg-item-msg">
+                        <img style="width:54px;height:54px;margin-right:20px"
+                            :src="orderDetail.vip.image ? Fast.api.cdnurl(orderDetail.vip.image) : Fast.api.cdnurl('/assets/addons/dramas/img/save_img.png')">
+                        <div>
+                            <div class="display-flex delivery-msg-item-msg">
+                                <div class="title-span-width">ID :</div>
+                                <div class="delivery-margin-left theme-color cursor-pointer"
+                                    style="text-decoration:underline" @click="goVipDetail(orderDetail.vip.id)">
+                                    {{orderDetail.vip.id}}</div>
+                            </div>
+                            <div class="display-flex delivery-msg-item-msg">
+                                <div class="title-span-width">{{__('Vip.title')}}:</div>
+                                <div class="delivery-margin-left">{{orderDetail.vip.title}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </el-col>
+            <el-col :xs="12" :sm="12" :md="6" :lg="6" :xl="6">
+                <div class="delivery-msg-item">
+                    <div class="display-flex delivery-msg-item-title">
+                        <div class="color-333">{{__('User')}}</div>
+                    </div>
+                    <div v-if="orderDetail.user" class="display-flex delivery-msg-item-msg">
+                        <img style="width:54px;height:54px;border-radius:50%;margin-right:20px"
+                            :src="Fast.api.cdnurl(orderDetail.user.avatar)">
+                        <div>
+                            <div class="display-flex delivery-msg-item-msg">
+                                <div class="title-span-width">ID :</div>
+                                <div class="delivery-margin-left theme-color cursor-pointer"
+                                    style="text-decoration:underline" @click="goUserDetail(orderDetail.user.id)">
+                                    {{orderDetail.user.id}}</div>
+                            </div>
+                            <div class="display-flex delivery-msg-item-msg">
+                                <div class="title-span-width">{{__('User.nickname')}}:</div>
+                                <div class="delivery-margin-left">{{orderDetail.user.nickname}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </el-col>
+            <el-col :xs="12" :sm="12" :md="6" :lg="6" :xl="6">
+                <div class="delivery-msg-item">
+                    <div class="display-flex delivery-msg-item-title">
+                        <div class="color-333">{{__('Pay info')}}</div>
+                    </div>
+                    <div v-if="orderDetail.status>0">
+                        <div class="display-flex delivery-msg-item-msg">
+                            <div class="title-span-width">{{__('Currency')}}:</div>
+                            <div class="delivery-margin-left">{{orderDetail.currency}}</div>
+                        </div>
+                        <div class="display-flex delivery-msg-item-msg">
+                            <div class="title-span-width">{{__('Total_fee')}}:</div>
+                            <div class="delivery-margin-left">{{orderDetail.total_fee}}</div>
+                        </div>
+                        <div class="display-flex delivery-msg-item-msg">
+                            <div class="title-span-width">{{__('Pay_fee')}}:</div>
+                            <div class="delivery-margin-left">{{orderDetail.pay_fee}}</div>
+                        </div>
+                        <div class="display-flex delivery-msg-item-msg">
+                            <div class="title-span-width">{{__('Pay_type')}}:</div>
+                            <div class="delivery-margin-left">{{orderDetail.pay_type_text}}</div>
+                        </div>
+                        <div class="display-flex delivery-msg-item-msg">
+                            <div class="title-span-width">{{__('Paytime')}}:</div>
+                            <div class="delivery-margin-left">{{orderDetail.paytime_text}}</div>
+                        </div>
+                    </div>
+                    <div v-else class="display-flex delivery-msg-item-msg">
+                        <div class="title-span-width">{{__('Status')}}:</div>
+                        <div class="delivery-margin-left">{{orderDetail.status_text}}</div>
+                    </div>
+                </div>
+            </el-col>
+        </el-row>
+    </div>
+
+    <div class="delivery-msg color-999">
+        <el-row>
+            <div class="delivery-msg-item">
+                <div class="display-flex delivery-msg-item-title">
+                    <div class="color-333">{{__('Payment_json')}}</div>
+                </div>
+                <div v-if="orderDetail.status>0">
+                    <div class="display-flex delivery-msg-item-msg" v-for="(value, key) in payment_json">
+                        <div class="title-span-width-pay">{{key}}:</div>
+                        <div class="delivery-margin-left">{{value}}</div>
+                    </div>
+                </div>
+                <div v-else class="display-flex delivery-msg-item-msg">
+                    <div class="title-span-width-pay">{{__('Status')}}:</div>
+                    <div class="delivery-margin-left">{{orderDetail.status_text}}</div>
+                </div>
+            </div>
+        </el-row>
+    </div>
+</div>

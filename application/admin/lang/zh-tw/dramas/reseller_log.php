@@ -1,0 +1,33 @@
+<?php
+                    
+return [
+    'Type' => '類型',
+    'Type direct' => '直接傭金',
+    'Type indirect' => '間接傭金',
+    'Reseller_user_id' => '分銷商ID',
+    'User_id' => '用戶ID',
+    'User_email' => '會員郵箱',
+    'User.nickname' => '用戶昵稱',
+    'Pay_money' => '支付金額',
+    'Ratio' => '分潤比例',
+    'Money' => '傭金',
+    'Currency' => '貨幣',
+    'Exchange rate' => '兌換比例',
+    'Total_money' => '積分傭金',
+    'Memo' => '備註',
+    'Order_type' => '訂單類型',
+    'Order_type vip' => 'VIP訂單',
+    'Order_type reseller' => '分銷商訂單',
+    'Order_type usable' => '劇場積分充值訂單',
+    'Order' => '訂單資訊',
+    'Order_id' => '訂單ID',
+    'User' => '消費用戶',
+    'Reseller' => '分銷商',
+    'Total logs' => '總記錄數量',
+    'Total money' => '傭金總金額',
+    'Total pay money' => '付款總金額',
+    'Withdraw total money' => '傭金總積分',
+    'Logs' => '條',
+    'Point' => '積分',
+    'Filter' => '篩選'
+];

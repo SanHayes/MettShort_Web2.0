@@ -1,0 +1,232 @@
+<link rel="stylesheet" href="__CDN__/assets/addons/dramas/libs/element/element.css">
+<link rel="stylesheet" href="__CDN__/assets/addons/dramas/libs/common.css">
+<style>
+    #userSelect {
+        background: #fff;
+        overflow: auto;
+        color: #444;
+        margin: -15px;
+    }
+
+    .dialog-right {
+        height: 100vh;
+        flex: 1;
+    }
+
+    .dialog-search {
+        padding: 9px 0;
+        justify-content: space-between;
+    }
+
+    .dialog-search .el-input {
+        width: 240px;
+    }
+
+    .dialog-search .el-input__inner {
+        background: #F9F9F9;
+        border: none;
+    }
+
+    .dialog-right-body {
+        padding: 0 14px;
+        height: calc(100vh - 62px);
+        overflow: auto;
+    }
+
+    .dialog-footer {
+        padding: 15px 20px;
+        justify-content: space-between;
+    }
+
+    .operation-button {
+        width: 60px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        font-size: 12px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .define-button {
+        background: #6E3DC8;
+        color: #fff;
+    }
+
+    .user-image {
+        width: 28px;
+        height: 28px;
+        border: 1px solid #E6E6E6;
+        border-radius: 2px;
+        margin-right: 8px;
+        flex-shrink: 0;
+    }
+
+    .el-pagination.is-background .el-pager li:not(.disabled).active {
+        background: #7438D5;
+    }
+
+    .el-image {
+        height: 100%;
+        width: 100%;
+    }
+
+    .image-slot {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .level-item-1,
+    .level-item-2,
+    .level-item-3,
+    .level-item-4 {
+        height: 26px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+    }
+
+    .level-item-2 {
+        padding-left: 20px;
+    }
+
+    .level-item-3 {
+        padding-left: 40px;
+    }
+
+    .level-item-4 {
+        padding-left: 73px;
+    }
+
+    .el-icon-arrow-down {
+        color: #666;
+    }
+
+    .arrow-open {
+        transform: rotateZ(90deg);
+        transition: transform .25s linear;
+    }
+
+    .arrow-selected {
+        color: #7438D5;
+        background: rgba(116, 56, 213, 0.14);
+        border-radius: 4px;
+    }
+
+    .item-name {
+        cursor: pointer;
+        flex: 1;
+    }
+
+    .el-icon-caret-right {
+        color: #666;
+    }
+
+    .i-container {
+        margin-right: 6px;
+    }
+
+    .el-table td,
+    .el-table th {
+        padding: 5px 0 6px;
+    }
+
+    .activity-text {
+        margin-right: 8px;
+    }
+
+    .activity-text:last-child {
+        margin-right: 0;
+    }
+
+    .score-activity {
+        color: #FF760D;
+    }
+
+    .groupon-activity {
+        color: #7438D5;
+    }
+
+    .seckill-activity {
+        color: #FF4F39;
+    }
+
+    .full-activity {
+        color: #F5AE6B;
+    }
+
+    .single-select-table thead .el-table-column--selection .cell {
+        display: none;
+    }
+
+    [v-cloak] {
+        display: none
+    }
+</style>
+<script src="__CDN__/assets/addons/dramas/libs/vue.js"></script>
+<script src="__CDN__/assets/addons/dramas/libs/element/element.js"></script>
+<div id="userSelect" v-cloak>
+    <div class="dialog-body display-flex">
+        <div class="dialog-right">
+            <div class="dialog-right-body">
+                <div class="dialog-search display-flex">
+                    <el-input size="small" :placeholder="__('Please enter search content')" v-model="searchWhere">
+                        <i slot="prefix" class="el-input__icon el-icon-search"></i>
+                    </el-input>
+                </div>
+                <div :class="multiple=='false'?'single-select-table':''">
+                    <el-table :data="userList" border @selection-change="multipleSelectionChange"
+                        ref="multipleTable" @select="SelectionChange">
+                        <el-table-column type="selection" width="40" v-if="multiple=='true'">
+                        </el-table-column>
+                        <el-table-column type="selection" width="40" v-if="multiple=='false'">
+                            <template slot-scope="scope">
+                                <el-checkbox v-model="scope.row.checked" @change="singleSelectionChange(scope.row)">
+                                </el-checkbox>
+                            </template>
+                        </el-table-column>
+                        <el-table-column prop="id" label="ID" min-width="70">
+                        </el-table-column>
+                        <el-table-column :label="__('Nickname')" min-width="100" align="left">
+                            <template slot-scope="scope">
+                                <div class="user-image">
+                                    <el-image :src="Fast.api.cdnurl(scope.row.avatar)" fit="contain">
+                                        <div slot="error" class="image-slot">
+                                            <i class="el-icon-picture-outline"></i>
+                                        </div>
+                                    </el-image>
+                                </div>
+                                <div class="user-title ellipsis-item">{{scope.row.nickname}}</div>
+                            </template>
+                        </el-table-column>
+                        <el-table-column prop="email" :label="__('Email')" min_width="100">
+                        </el-table-column>
+                        <el-table-column prop="usable" :label="__('Usable')" min_width="80">
+                        </el-table-column>
+                        <el-table-column prop="mode" :label="__('Mode')" min_width="80">
+                            <template slot-scope="scope">
+                                <div v-if="scope.row.mode == 'guest'" class="user-title ellipsis-item">{{__('Guest')}}</div>
+                                <div v-if="scope.row.mode == 'user'" class="user-title ellipsis-item">{{__('User')}}</div>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </div>
+            </div>
+            <div class="dialog-footer display-flex">
+                <div>
+                    <el-pagination background layout="prev, pager, next" :total="totalPage" @prev-click="changeClick"
+                        @next-click="changeClick" @current-change="changeClick" :current-page="currentPage">
+                    </el-pagination>
+                </div>
+                <div class="display-flex">
+                    <div @click="operation()" class="operation-button define-button">{{__('Ok')}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

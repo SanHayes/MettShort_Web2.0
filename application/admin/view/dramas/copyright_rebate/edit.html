@@ -1,0 +1,27 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Copyright_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-copyright_id" data-rule="required" data-source="dramas/copyright/index" class="form-control selectpage" name="row[copyright_id]" type="text" value="{$row.copyright_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Fee')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-fee" data-rule="required" class="form-control" name="row[fee]" type="number" value="{$row.fee|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Rebate')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-rebate" data-rule="required" class="form-control" step="0.01" name="row[rebate]" type="number" value="{$row.rebate|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>
